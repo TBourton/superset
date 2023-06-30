@@ -190,6 +190,7 @@ initImage:
 service:
   type: ClusterIP
   port: 8088
+  targetPort: ""
   annotations: {}
     # cloud.google.com/load-balancer-type: "Internal"
   loadBalancerIP: ~
@@ -274,6 +275,8 @@ supersetNode:
         - -c
         - dockerize -wait "tcp://$DB_HOST:$DB_PORT" -timeout 120s
 
+  # -- Override SUPERSET_PORT
+  containerPort: ""
   # -- Launch additional containers into supersetNode pod
   extraContainers: []
   # -- Annotations to be added to supersetNode deployment

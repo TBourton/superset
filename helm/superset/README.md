@@ -114,6 +114,7 @@ helm install my-superset superset/superset
 | service.loadBalancerIP | string | `nil` |  |
 | service.nodePort.http | int | `"nil"` |  |
 | service.port | int | `8088` |  |
+| service.targetPort | string | `""` |  |
 | service.type | string | `"ClusterIP"` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `false` | Create custom service account for Superset. If create: true and serviceAccountName is not provided, `superset.fullname` will be used. |
@@ -177,6 +178,7 @@ helm install my-superset superset/superset
 | supersetNode.connections.db_user | string | `"superset"` |  |
 | supersetNode.connections.redis_host | string | `"{{ .Release.Name }}-redis-headless"` | Change in case of bringing your own redis and then also set redis.enabled:false |
 | supersetNode.connections.redis_port | string | `"6379"` |  |
+| supersetNode.containerPort | string | `""` | Override SUPERSET_PORT |
 | supersetNode.containerSecurityContext | object | `{}` |  |
 | supersetNode.deploymentAnnotations | object | `{}` | Annotations to be added to supersetNode deployment |
 | supersetNode.deploymentLabels | object | `{}` | Labels to be added to supersetNode deployment |

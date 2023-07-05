@@ -466,6 +466,7 @@ supersetCeleryFlower:
   service:
     type: ClusterIP
     annotations: {}
+    labels: {}
     loadBalancerIP: ~
     port: 5555
     nodePort:

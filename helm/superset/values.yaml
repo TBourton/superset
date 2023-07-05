@@ -571,6 +571,7 @@ supersetWebsockets:
   service:
     type: ClusterIP
     annotations: {}
+    labels: {}
     loadBalancerIP: ~
     port: 8080
     nodePort:

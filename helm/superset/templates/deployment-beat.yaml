@@ -86,7 +86,7 @@ spec:
           command: {{  tpl (toJson .Values.supersetCeleryBeat.command) . }}
           env:
             - name: "SUPERSET_PORT"
-              value: {{ .Values.supersetNode.containerPort | default .Values.service.port | quote}}
+              value: {{ .Values.supersetNode.containerPort | default .Values.service.port | quote }}
             {{- range $key, $value := .Values.extraEnv }}
             - name: {{ $key | quote}}
               value: {{ $value | quote }}

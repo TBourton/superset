@@ -36,6 +36,12 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
+    {{- if .Values.supersetNode.containerPort }}
+    - port: {{ .Values.supersetNode.containerPort }}
+      targetPort: {{ .Values.supersetNode.containerPort }}
+      protocol: TCP
+      name: superset-container
+    {{- end }}
     - port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.targetPort | default "http" }}
       protocol: TCP
